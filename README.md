@@ -4,12 +4,14 @@ A real-time **finger tracking and air drawing** web app powered by **MediaPipe H
 The project lets you draw in the air using your webcam — your finger becomes the brush!
 
 ---
+<img src="https://media.tenor.com/i3lImBg2UEQAAAAM/scaler-create-impact.gif" alt="Animated Showcase" width="80%" />
+---
 
 ## 🌐 Live Demo
 
-👉 **Try it here:** [Finger Tracking Drawing Demo](https://yourusername.github.io/finger-drawing/)
+👉 **Try it here:** [Finger Tracking Drawing Demo](https://draw-with-fingers.netlify.app/)
 
-*(Replace the link above with your deployed GitHub Pages or Vercel link.)*
+
 
 ---
 
