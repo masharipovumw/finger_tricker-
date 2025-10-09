@@ -4,7 +4,7 @@
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Finger Tracking & Drawing</title>
-        <link rel="stylesheet" href="./style.css">
+        <link rel="stylesheet" href="./style.css" />
     </head>
     <body>
         <h2>🖐️ Finger Tracking & Drawing</h2>
@@ -14,7 +14,21 @@
             <canvas id="drawCanvas" width="640" height="480"></canvas>
         </div>
         <div class="controls">
-            <button id="clearBtn" >Clear Drawing</button>
+            <div class="tools">
+                <button id="clearBtn">Clear Drawing</button>
+                <button id="eraseBtn">Erase Mode</button>
+
+            </div>
+            <div class="Brush">
+                <form id="colorForm">
+                    <label for="color">Choose a color:</label>
+                    <select name="color" id="color">
+                        <option value="red">Red</option>
+                        <option value="green">Green</option>
+                        <option value="blue">Blue</option>
+                    </select>
+                </form>
+            </div>
         </div>
 
         <script src="https://cdn.jsdelivr.net/npm/@mediapipe/hands/hands.js"></script>

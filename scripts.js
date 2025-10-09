@@ -4,6 +4,21 @@ const drawCanvas = document.getElementById('drawCanvas')
 const ctx = canvasElement.getContext('2d')
 const drawCtx = drawCanvas.getContext('2d')
 const clearBtn = document.getElementById('clearBtn')
+const ColorSelector = document.getElementById('color')
+const eraseBtn = document.getElementById('eraseBtn')
+
+function ColorOption() {
+    drawCtx.strokeStyle = ColorSelector.value
+}
+let eraseMode = false
+
+eraseBtn.addEventListener('click', () => {
+    eraseMode = !eraseMode
+    drawCtx.globalCompositeOperation = 'destination-out'
+    drawCtx.lineWidth = 30
+
+    eraseBtn.textContent = eraseMode ? 'Draw Mode' : 'Erase Mode'
+})
 
 let previousPosition = null
 
@@ -44,7 +59,6 @@ function onResults(results) {
             ctx.fill()
         }
 
-        // Drawing with index finger tip (landmark 8)
         const indexTip = landmarks[8]
         const x = indexTip.x * drawCanvas.width
         const y = indexTip.y * drawCanvas.height
@@ -53,8 +67,16 @@ function onResults(results) {
             drawCtx.beginPath()
             drawCtx.moveTo(previousPosition.x, previousPosition.y)
             drawCtx.lineTo(x, y)
-            drawCtx.strokeStyle = 'red'
-            drawCtx.lineWidth = 4
+            drawCtx.strokeStyle = eraseMode ? '#000000' : ColorSelector.value
+            drawCtx.lineWidth = eraseMode ? 20 : 4
+            if (eraseMode) {
+
+            } else {
+                drawCtx.globalCompositeOperation = 'source-over'
+                drawCtx.strokeStyle = ColorSelector.value
+                drawCtx.lineWidth = 4
+            }
+
             drawCtx.stroke()
         }
 

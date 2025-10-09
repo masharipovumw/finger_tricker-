@@ -22,6 +22,13 @@ canvas {
     height: 480px;
 }
 #clearBtn {
-    color: wheat;
+    color: black;
+    background-color: aliceblue;
     cursor: pointer;
+}
+.controls{
+    display: flex;
+    justify-content: space-between;
+    width: 640px;
+    margin-top: 10px;
 }
